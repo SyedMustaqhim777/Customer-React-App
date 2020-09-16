@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import { CUSTOMERS_API } from "../services/api";
+import { Table, Button} from "react-bootstrap";
+
 
 export default function CustomerList(props) {
   const [loadedCustomers, setLoadedCustomers] = useState(false);
@@ -50,18 +52,18 @@ export default function CustomerList(props) {
     <div>
       <Menu />
       <h3>Customers</h3>
-      {loadedCustomers === false ? <h1>Loading</h1> : <h1>Loaded </h1>}
-      <button
+      {/* {loadedCustomers === false ? <h1>Loading</h1> : <h1>Loaded </h1>} */}
+      <Button
         onClick={() => {
           props.history.push("/customer/add");
         }}
       >
         Add Customer
-      </button>
+      </Button>
       {/* <Link to="/customer/add"> Add Customer </Link> */}
       <br />
       <br />
-      <table border="1">
+      <Table striped bordered hover size="sm" variant='dark'>
         <thead>
           <tr>
             <th width="20px">No</th>
@@ -69,8 +71,8 @@ export default function CustomerList(props) {
             <th width="220px">Email</th>
             <th width="100px">Phone</th>
             <th width="300px">Address</th>
-            <th></th>
-            <th></th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -82,21 +84,21 @@ export default function CustomerList(props) {
               <td>{item.phone}</td>
               <td>{item.address}</td>
               <td>
-                <button
+                <Button
                   onClick={() => {
                     props.history.push("/customer/add/" + item.id);
-                  }}
+                  }} variant="warning" size='sm'
                 >
                   Edit
-                </button>
+                </Button>
               </td>
               <td>
-                <button onClick={() => doDelete(item)}>Delete</button>
+                <Button onClick={() => doDelete(item)} variant="danger" size='sm'>Delete</Button>
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }

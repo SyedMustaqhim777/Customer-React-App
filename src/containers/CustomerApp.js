@@ -22,7 +22,7 @@ export default class CustomerApp extends React.Component {
     return (
       <div>
         <Menu />
-        <h3>CustomerApp</h3>
+        <h4>Customer Application</h4>
         <form onSubmit={this.addUpdateItem}>
           <input
             type="text"
@@ -60,7 +60,7 @@ export default class CustomerApp extends React.Component {
           />
           <br />
           <br />
-          <button>{this.state.buttonLabel}</button>
+          <Button>{this.state.buttonLabel}</Button>
           <br />
           <br />
         </form>
@@ -134,16 +134,16 @@ export default class CustomerApp extends React.Component {
 class CustomerList extends React.Component {
   render() {
     return (
-      <Table striped bordered hover size="sm">
+      <Table striped bordered hover size="sm" variant='dark'>
         <thead>
           <tr>
             <th width="20px">No</th>
             <th width="250px">Name</th>
             <th width="220px">Email</th>
             <th width="100px">Phone</th>
-            <th width="300px">Address</th>
-            <th></th>
-            <th></th>
+            <th width="100px">Address</th>
+            <th width="10px"> Edit </th>
+            <th width="20px"> Delete </th>
           </tr>
         </thead>
         <tbody>
@@ -155,12 +155,12 @@ class CustomerList extends React.Component {
               <td>{item.phone}</td>
               <td>{item.address}</td>
               <td>
-                <Button onClick={() => this.props.editItem(item.id)} size='sm'>
+                <Button onClick={() => this.props.editItem(item.id)}  variant="warning" size='sm'>
                   Edit
                 </Button>
               </td>
               <td>
-                <Button onClick={() => this.props.deleteItem(item.id)} variant="danger" size='sm'>
+                <Button onClick={() => this.props.deleteItem(item.id)} variant="danger" size='sm' >
                   Delete
                 </Button>
               </td>
