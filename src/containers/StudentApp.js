@@ -131,7 +131,7 @@ export default class StudentApp extends Component {
       this.state.items = studentService.getRecords();
     } else {
       newItem.id = Date.now();
-      studentService.updateRecord(newItem);
+      studentService.addRecord(newItem);
       this.state.items = studentService.getRecords();
     }
     this.setState({
