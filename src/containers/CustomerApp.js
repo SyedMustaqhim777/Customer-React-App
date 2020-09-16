@@ -129,7 +129,7 @@ class CustomerList extends React.Component {
                 <td>
                 {item.id}
                 </td>
-                <td>
+                <td  id={item.id}>
                 {item.name}
                 </td>
                 <td>
