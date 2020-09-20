@@ -15,6 +15,7 @@ function Login(props) {
   };
 const onSubmit = ()=>{
    if(email === password){
+     localStorage.setItem('user', email);
       props.history.push('/customer-app');
    }else{
       alert('Incorrect email or password. Please try again.')
@@ -23,6 +24,8 @@ const onSubmit = ()=>{
 
   return (
    <Form>
+     <br/>
+     <br/>
    <Form.Group controlId="formBasicEmail">
      <Form.Label>Email address</Form.Label>
      <Form.Control type="email" onChange={handleChange} placeholder="Enter email" />

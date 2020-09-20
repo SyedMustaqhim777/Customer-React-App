@@ -1,0 +1,19 @@
+<button id="menu">Menu (click me)</button>
+
+<script>
+  // 1 -> nested -> 2
+  menu.onclick = function() {
+
+
+    // alert("nested")
+    menu.dispatchEvent(new CustomEvent("menu-open", {
+      bubbles: true
+    }));
+
+
+  };
+
+  document.addEventListener('menu-open', () => alert('nested1'))
+  document.addEventListener('menu-open', () => alert('nested2'))
+
+</script>

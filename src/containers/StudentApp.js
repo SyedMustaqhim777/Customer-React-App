@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Menu from "../containers/Menu";
 import studentService from "../services/student";
-import { Table, Button} from "react-bootstrap";
-
+import { Table, Button } from "react-bootstrap";
 
 export default class StudentApp extends Component {
   state = {
@@ -169,7 +168,7 @@ export default class StudentApp extends Component {
 class StudentList extends Component {
   render() {
     return (
-      <Table striped bordered hover size="sm" variant='dark'>
+      <Table striped bordered hover size="sm" variant="dark">
         <thead>
           <tr>
             <th width="20px">No.</th>
@@ -194,12 +193,20 @@ class StudentList extends Component {
               <td>{item.city}</td>
               <td>{item.country}</td>
               <td>
-                <Button onClick={() => this.props.editItem(item.id)} variant="warning" size='sm'>
+                <Button
+                  onClick={() => this.props.editItem(item.id)}
+                  variant="warning"
+                  size="sm"
+                >
                   Edit
                 </Button>
               </td>
               <td>
-                <Button onClick={() => this.props.deleteItem(item.id)} variant="danger" size='sm'>
+                <Button
+                  onClick={() => this.props.deleteItem(item.id)}
+                  variant="danger"
+                  size="sm"
+                >
                   Delete
                 </Button>
               </td>

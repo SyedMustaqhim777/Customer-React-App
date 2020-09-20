@@ -4,6 +4,9 @@ import CustomersList from "../containers/Customer";
 import {Badge} from 'react-bootstrap'
 
 function Menu() {
+    const doLogout= ()=>{
+      localStorage.removeItem('user');
+    }
   return (
     <div><br/>
       <h4>
@@ -16,7 +19,7 @@ function Menu() {
       &nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
       {/* <Link to={'/temperature'}>Temperature</Link> |  */}
       <Link to={"/about"}>About</Link> &nbsp; &nbsp;
-      <Link to={"/login"}>Logout</Link>
+      <Link onClick={doLogout} to={'/Login'}>Logout</Link>
       <hr />
       
     </div>  );

@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "../containers/Menu";
 import customerService from "../services/customer";
-import { Table, Button} from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 export default class CustomerApp extends React.Component {
   state = {
     items: customerService.getRecords(),
@@ -134,7 +134,7 @@ export default class CustomerApp extends React.Component {
 class CustomerList extends React.Component {
   render() {
     return (
-      <Table striped bordered hover size="sm" variant='dark'>
+      <Table striped bordered hover size="sm" variant="dark">
         <thead>
           <tr>
             <th width="20px">No</th>
@@ -155,12 +155,20 @@ class CustomerList extends React.Component {
               <td>{item.phone}</td>
               <td>{item.address}</td>
               <td>
-                <Button onClick={() => this.props.editItem(item.id)}  variant="warning" size='sm'>
+                <Button
+                  onClick={() => this.props.editItem(item.id)}
+                  variant="warning"
+                  size="sm"
+                >
                   Edit
                 </Button>
               </td>
               <td>
-                <Button onClick={() => this.props.deleteItem(item.id)} variant="danger" size='sm' >
+                <Button
+                  onClick={() => this.props.deleteItem(item.id)}
+                  variant="danger"
+                  size="sm"
+                >
                   Delete
                 </Button>
               </td>
